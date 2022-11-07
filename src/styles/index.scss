@@ -1,0 +1,66 @@
+.nut-inputnumber {
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+  margin-left: 20px;
+  height: 48px;
+  line-height: 48px;
+  width: 30%;
+  box-sizing: border-box;
+  .nut-icon:nth-child(1) {
+    position: absolute;
+    top: 24px;
+    font-size: 24px;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 14px;
+    width: 10px !important;
+    height: 10px !important;
+    transform: scale(0.8);
+    &::before {
+      width: 10px;
+      height: 10px;
+      top: 0;
+      left: 0;
+    }
+  }
+  input {
+    border-radius: 0 !important;
+    margin: 0;
+    width: 100% !important;
+    box-sizing: border-box;
+    text-align: left !important;
+    padding-left: 20px;
+    height: 48px;
+    line-height: 48px;
+  }
+  .nut-icon:nth-child(3) {
+    position: absolute;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px !important;
+    height: 10px !important;
+    right: 14px;
+    top: -2px;
+    color: #999;
+    transform: scale(0.8);
+    &::before {
+      width: 10px;
+      height: 10px;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+#app {
+  .nut-tabbar {
+    background: #000;
+    border: 0;
+    height: 108px;
+  }
+}

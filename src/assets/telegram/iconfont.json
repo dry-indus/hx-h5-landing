@@ -1,0 +1,72 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "37282",
+      "name": "天猫提示-警示",
+      "font_class": "jingshi",
+      "unicode": "f0070",
+      "unicode_decimal": 983152
+    },
+    {
+      "icon_id": "1221257",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "4187228",
+      "name": "钱包",
+      "font_class": "qianbao",
+      "unicode": "e63d",
+      "unicode_decimal": 58941
+    },
+    {
+      "icon_id": "6444221",
+      "name": "招商小程序-问号",
+      "font_class": "zhaoshangxiaochengxu-wenhao",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "6548523",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "11372760",
+      "name": "帮助",
+      "font_class": "bangzhu",
+      "unicode": "e8c3",
+      "unicode_decimal": 59587
+    },
+    {
+      "icon_id": "15112769",
+      "name": "财富",
+      "font_class": "caifu",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "26696868",
+      "name": "更多-横_1",
+      "font_class": "gengduo-heng_1",
+      "unicode": "e75e",
+      "unicode_decimal": 59230
+    },
+    {
+      "icon_id": "30044907",
+      "name": "纸飞机-fill",
+      "font_class": "paperPlane-fill",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    }
+  ]
+}

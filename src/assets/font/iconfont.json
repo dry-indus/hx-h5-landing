@@ -1,0 +1,58 @@
+{
+  "id": "3731779",
+  "name": "hx",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "248935",
+      "name": "tag",
+      "font_class": "tag",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
+    },
+    {
+      "icon_id": "7834345",
+      "name": "plus",
+      "font_class": "plus",
+      "unicode": "e8fe",
+      "unicode_decimal": 59646
+    },
+    {
+      "icon_id": "248966",
+      "name": "share",
+      "font_class": "share",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "248980",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e699",
+      "unicode_decimal": 59033
+    },
+    {
+      "icon_id": "658064",
+      "name": "list view",
+      "font_class": "listview",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "4765897",
+      "name": "location",
+      "font_class": "location",
+      "unicode": "e790",
+      "unicode_decimal": 59280
+    },
+    {
+      "icon_id": "12880824",
+      "name": "list",
+      "font_class": "list",
+      "unicode": "e67d",
+      "unicode_decimal": 59005
+    }
+  ]
+}
