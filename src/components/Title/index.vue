@@ -6,7 +6,7 @@
 </template>
 <script lang="ts" setup>
   import { ref } from 'vue';
-  const enTitle = ref('HAIXIAN');
+  const enTitle = ref('HAIXIAN啦啦');
   const zhTitle = ref('海鲜商户');
 </script>
 <style lang="scss" scoped>

@@ -1,7 +1,7 @@
 <template>
   <div class="homeTop">
     <div class="appName">
-      <div class="enName">HAIXIAN</div>
+      <div class="enName">HAIXIAN啦啦</div>
       <div class="zhName">海鲜商户</div>
     </div>
     <div class="user" v-if="isUser">
