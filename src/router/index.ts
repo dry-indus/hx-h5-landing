@@ -7,7 +7,7 @@ const router: Router = createRouter({
   history: createWebHashHistory('/'),
   routes: routes,
 });
-const whiteList = ['/merchant/login', '/merchant/register', '/'];
+const whiteList = ['/merchant/login', '/merchant/register', '/','/choice','/landing'];
 
 router.beforeEach(async (to, from, next) => {
   useTransitionStore().handleRouteChange({ to, from });

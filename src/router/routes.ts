@@ -80,6 +80,26 @@ const routes = [
       transition: true,
     },
   },
+  {
+    name: 'landing',
+    path: '/landing',
+    component: () => import('/@/views/store/index.vue'),
+    meta: {
+      title: 'tabbar.batchAdd',
+      keepAlive: true,
+      transition: true,
+    },
+  },
+  {
+    name: 'choice',
+    path: '/choice',
+    component: () => import('/@/views/store/list.vue'),
+    meta: {
+      title: 'tabbar.batchAdd',
+      keepAlive: true,
+      transition: true,
+    },
+  },
 ];
 
 export default routes;
