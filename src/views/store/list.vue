@@ -12,8 +12,6 @@
 </template>
 
 <script lang="ts" setup name="ListPage">
-import { reactive, ref } from 'vue';
-import Logo from './logo/index.vue';
 </script>
 
 <style lang="scss" scoped>
