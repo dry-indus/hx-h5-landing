@@ -11,7 +11,9 @@
   </div>
 </template>
 
-<script lang="ts" setup name="ListPage"></script>
+<script lang="ts" setup name="ListPage">
+  import LandingLogo from '/@/views/store/logo/index.vue';
+</script>
 
 <style lang="scss" scoped>
   .storeWarpper {
