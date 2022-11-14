@@ -1,7 +1,7 @@
 <template>
   <div class="storeWarpper">
     <div class="header">
-      <logo />
+      <LandingLogo />
       <p class="appName">海选新鲜</p>
     </div>
     <main>
@@ -11,49 +11,48 @@
   </div>
 </template>
 
-<script lang="ts" setup name="ListPage">
-</script>
+<script lang="ts" setup name="ListPage"></script>
 
 <style lang="scss" scoped>
-.storeWarpper {
-  height: 100vh;
-  width: 100vw;
-  background: #000;
-}
-.header {
-  height: 40%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .appName {
-    font-size: 36px;
-    color: #ffffff;
+  .storeWarpper {
+    height: 100vh;
+    width: 100vw;
+    background: #000;
   }
-}
-.store {
-  position: fixed;
-  width: 333px;
-  height: 92.34px;
+  .header {
+    height: 40%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .appName {
+      font-size: 36px;
+      color: #ffffff;
+    }
+  }
+  .store {
+    position: fixed;
+    width: 333px;
+    height: 92.34px;
     right: 0;
     bottom: 500px;
-  background: #da2d96;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
-.rider{
+    background: #da2d96;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+  .rider {
     position: fixed;
-  width: 333px;
-  height: 92.34px;
+    width: 333px;
+    height: 92.34px;
     right: 0;
     bottom: 300px;
-  background: #7792CF;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
+    background: #7792cf;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
 </style>

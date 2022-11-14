@@ -1,13 +1,13 @@
-import { createRouter, Router, createWebHashHistory } from 'vue-router';
+import { createRouter, Router, createWebHistory } from 'vue-router';
 import routes from './routes';
 import { useTransitionStore } from '/@/store/modules/transition';
 import { getCookie } from '/@/utils/jsCookie';
 
 const router: Router = createRouter({
-  history: createWebHashHistory('/'),
+  history: createWebHistory('/'),
   routes: routes,
 });
-const whiteList = ['/merchant/login', '/merchant/register', '/','/choice','/landing'];
+const whiteList = ['/merchant/login', '/merchant/register', '/', '/choice', '/landing'];
 
 router.beforeEach(async (to, from, next) => {
   useTransitionStore().handleRouteChange({ to, from });
