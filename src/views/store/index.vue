@@ -25,7 +25,7 @@
 <script lang="ts" setup name="StorePage">
   import { reactive, ref } from 'vue';
   import imgs from '../../assets/images/avatartest.jpeg';
-  import LandingLogo from '/@/views/store/logo/index.vue';
+  // import LandingLogo from '/@/views/store/logo/index.vue';
 
   const formData = reactive({
     search: '',
