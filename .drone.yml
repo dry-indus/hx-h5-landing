@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: hx-h5-home
+name: hx-h5-landing
 
 volumes:
   - name: cache
@@ -62,7 +62,7 @@ steps:
     password:
         from_secret: ssh_password
     port: 22
-    target: /var/www/hx-home
+    target: /var/www/hx-landing
     source: 
       - dist
   when:
@@ -79,7 +79,7 @@ steps:
         from_secret: ssh_password
     port: 22
     script:
-      - echo hx-h5-home
+      - echo hx-h5-landing
   when:
     branch: [master]
 
