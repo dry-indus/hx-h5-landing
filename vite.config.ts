@@ -36,19 +36,19 @@ export default function ({ command }: ConfigEnv): UserConfigExport {
       hmr: true,
       proxy: {
         '/api': {
-          target: 'http://swagger.mik888.com/api/merchant/v1',
+          target: 'https://www.hx24h.com',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ''),
+          secure: true,
         },
       },
     },
     plugins: createVitePlugins(isProduction),
-    define: {
-      'process.env': {
-        VITE_BASIC_URL: config === 'development' ? '/api' : 'https://www.hx24h.com/api/merchant/v1',
-      },
-    },
-    base: './',
+    // define: {
+    //   'process.env': {
+    //     VITE_BASIC_URL: config === 'development' ? '/api' : 'https://www.hx24h.com/api/landing/v1',
+    //   },
+    // },
+    base: isProduction ? '/landing/' : './',
     build: {
       minify: 'terser',
       terserOptions: {

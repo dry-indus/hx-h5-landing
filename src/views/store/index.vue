@@ -5,16 +5,16 @@
       <p class="appName">海选新鲜</p>
     </div>
     <main>
-      <nut-input left-icon="search" left-icon-size="15" v-model="formData.search" placeholder="搜索商家" />
+      <nut-input left-icon="search" left-icon-size="15" @change="handleChange" v-model="formData.search" placeholder="搜索商家" />
       <div class="storeList">
-        <div class="item" v-for="(item, index) in storeList" :key="index">
+        <div class="item" v-for="(item, index) in state.storeList" :key="index">
           <div class="info">
-            <img :src="imgsrc" alt="" />
-            <span class="storeTitle">{{ item.label }}</span>
+            <img :src="item.prtrait" alt="" />
+            <span class="storeTitle">{{ item.storeName }}</span>
           </div>
           <div class="data">
             <nut-icon name="star" />
-            <span class="storeTitle">{{ item.value }}</span>
+            <span class="storeTitle">{{ item.star }}</span>
           </div>
         </div>
       </div>
@@ -23,22 +23,39 @@
 </template>
 
 <script lang="ts" setup name="StorePage">
-  import { reactive, ref } from 'vue';
-  import imgs from '../../assets/images/avatartest.jpeg';
+  import { reactive } from 'vue';
   import LandingLogo from '/@/views/store/logo/index.vue';
-
+  import { storeSearch } from '/@/api/landing';
+  type store = {
+    URL: string;
+    category: Number;
+    prtrait: boolean;
+    star?: boolean;
+    storeName?: boolean;
+  };
   const formData = reactive({
     search: '',
   });
-  const imgsrc = ref<any>(imgs);
-  const storeList = ref<any>([
-    { label: '商家1', value: '10' },
-    { label: '商家2', value: '10' },
-    { label: '商家3', value: '10' },
-    { label: '商家4', value: '10' },
-    { label: '商家5', value: '10' },
-    { label: '商家6', value: '10' },
-  ]);
+  const state = reactive<any>({
+    storeList: [],
+  });
+  const handleChange = () => {
+    search(formData.search);
+  };
+  const search = (keywords) => {
+    const params = {
+      keywords,
+      pageNumber: 1,
+      pageSize: 20,
+    };
+    storeSearch(params).then((res) => {
+      if (res?.status === 200) {
+        state.storeList = res.data.data.result;
+        console.log(state.storeList, res.data);
+      }
+    });
+  };
+  search('');
 </script>
 
 <style lang="scss" scoped>

@@ -11,7 +11,7 @@ export class Request {
   public static init() {
     this.axiosInstance = axios.create({
       timeout: 5000,
-      baseURL: process.env.VITE_BASIC_URL,
+      baseURL: '/',
     });
     this.initInterceptors();
     return axios;
