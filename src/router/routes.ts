@@ -1,7 +1,7 @@
 const routes = [
   {
     name: 'landing',
-    path: '/',
+    path: '/landing',
     component: () => import('/@/views/store/index.vue'),
     meta: {
       title: 'landing',
