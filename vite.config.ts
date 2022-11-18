@@ -1,6 +1,6 @@
 import { createVitePlugins } from './config/vite/plugins';
 import { resolve } from 'path';
-import { ConfigEnv, UserConfigExport } from 'vite';
+import { ConfigEnv, UserConfigExport, loadEnv } from 'vite';
 
 const pathResolve = (dir: string) => {
   return resolve(process.cwd(), '.', dir);
@@ -11,6 +11,7 @@ export default function ({ command, mode }: ConfigEnv): UserConfigExport {
   // const config = process.env.NODE_ENV;
   const isProduction = command === 'build';
   const root = process.cwd();
+  const env = loadEnv(mode, root);
   return {
     root,
     resolve: {
@@ -48,7 +49,7 @@ export default function ({ command, mode }: ConfigEnv): UserConfigExport {
     //     VITE_BASIC_URL: config === 'development' ? '/api' : 'https://www.hx24h.com/api/landing/v1',
     //   },
     // },
-    base: mode === 'production' ? '' : './',
+    base: env.VITE_PUBLIC_PATH,
     build: {
       minify: 'terser',
       terserOptions: {
