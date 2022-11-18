@@ -48,7 +48,7 @@ export default function ({ command }: ConfigEnv): UserConfigExport {
     //     VITE_BASIC_URL: config === 'development' ? '/api' : 'https://www.hx24h.com/api/landing/v1',
     //   },
     // },
-    base: '/landing',
+    base: '/',
     build: {
       minify: 'terser',
       terserOptions: {
