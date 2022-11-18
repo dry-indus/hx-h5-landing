@@ -26,13 +26,6 @@
   import { reactive } from 'vue';
   import LandingLogo from '/@/views/store/logo/index.vue';
   import { storeSearch } from '/@/api/landing';
-  type store = {
-    URL: string;
-    category: Number;
-    prtrait: boolean;
-    star?: boolean;
-    storeName?: boolean;
-  };
   const formData = reactive({
     search: '',
   });

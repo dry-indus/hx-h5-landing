@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup name="ListPage">
-  import LandingLogo from '/@/views/store/logo/index.vue';
+  // import LandingLogo from '/@/views/store/logo/index.vue';
 </script>
 
 <style lang="scss" scoped>
