@@ -7,7 +7,7 @@ const pathResolve = (dir: string) => {
 };
 
 // https://vitejs.dev/config/
-export default function ({ command }: ConfigEnv): UserConfigExport {
+export default function ({ command, mode }: ConfigEnv): UserConfigExport {
   // const config = process.env.NODE_ENV;
   const isProduction = command === 'build';
   const root = process.cwd();
@@ -48,7 +48,7 @@ export default function ({ command }: ConfigEnv): UserConfigExport {
     //     VITE_BASIC_URL: config === 'development' ? '/api' : 'https://www.hx24h.com/api/landing/v1',
     //   },
     // },
-    base: isProduction ? '/' : '/',
+    base: mode === 'production' ? '' : './',
     build: {
       minify: 'terser',
       terserOptions: {
