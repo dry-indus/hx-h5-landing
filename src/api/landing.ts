@@ -1,6 +1,6 @@
 import { Request } from '/@/utils/request';
 
-//获取文件上传状态
+//搜索商店
 export function storeSearch(taskId: string) {
   return Request.axiosInstance({
     url: `/api/landing/v1/store/search`,

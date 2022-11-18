@@ -48,7 +48,7 @@ export default function ({ command }: ConfigEnv): UserConfigExport {
     //     VITE_BASIC_URL: config === 'development' ? '/api' : 'https://www.hx24h.com/api/landing/v1',
     //   },
     // },
-    base: isProduction ? '/landing/' : './',
+    base: isProduction ? '/landing' : '/',
     build: {
       minify: 'terser',
       terserOptions: {
@@ -56,6 +56,13 @@ export default function ({ command }: ConfigEnv): UserConfigExport {
           //生产环境时移除console
           drop_console: true,
           drop_debugger: true,
+        },
+      },
+      rollupOptions: {
+        output: {
+          chunkFileNames: 'assets/landing-[hash].js',
+          entryFileNames: 'assets/landing-[hash].js',
+          assetFileNames: 'assets/landing-[hash].[ext]',
         },
       },
     },

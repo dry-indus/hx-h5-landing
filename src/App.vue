@@ -23,9 +23,6 @@
     <template #fallback> Loading... </template>
   </Suspense>
 </template>
-<script setup>
-  import PageSlide from '/@/components/pageSlide/index.vue';
-</script>
 <style lang="scss">
   #app {
     position: relative;
