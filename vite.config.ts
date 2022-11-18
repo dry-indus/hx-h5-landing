@@ -8,7 +8,7 @@ const pathResolve = (dir: string) => {
 
 // https://vitejs.dev/config/
 export default function ({ command }: ConfigEnv): UserConfigExport {
-  const config = process.env.NODE_ENV;
+  // const config = process.env.NODE_ENV;
   const isProduction = command === 'build';
   const root = process.cwd();
   return {
