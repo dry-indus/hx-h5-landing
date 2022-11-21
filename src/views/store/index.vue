@@ -24,7 +24,7 @@
 
 <script lang="ts" setup name="StorePage">
   import { reactive } from 'vue';
-  // import LandingLogo from '/@/views/store/logo/index.vue';
+  // import LandingLogo from '../../components/logo/index.vue';
   import { storeSearch } from '/@/api/landing';
   const formData = reactive({
     search: '',
@@ -42,15 +42,14 @@
       pageSize: 20,
     };
 
-    console.log(params);
-    storeSearch("").then((res) => {
+    storeSearch(params).then((res) => {
       if (res?.status === 200) {
         state.storeList = res.data.data.result;
         console.log(state.storeList, res.data);
       }
     });
   };
-  search('');
+  search('string');
 </script>
 
 <style lang="scss" scoped>

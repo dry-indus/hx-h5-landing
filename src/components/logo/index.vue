@@ -1,12 +1,12 @@
 <template>
   <div class="logoWarrper">
-    <img class="logo" :src="require('/@/assets/images/logo.png')" alt="" />
-    <img class="stars l1 anima" :src="require('/@/assets/images/xing.png')" alt="" />
-    <img class="stars l2 anima" :src="require('/@/assets/images/xing.png')" alt="" />
-    <img class="stars l3 anima" :src="require('/@/assets/images/xing.png')" alt="" />
-    <img class="stars l4 anima" :src="require('/@/assets/images/xing.png')" alt="" />
-    <img class="stars l5 anima" :src="require('/@/assets/images/xing.png')" alt="" />
-    <img class="stars l6 anima" :src="require('/@/assets/images/xing.png')" alt="" />
+    <img class="logo" src="../../assets/images/logo.png" alt="" />
+    <img class="stars l1 anima" src="../../assets/images/xing.png" alt="" />
+    <img class="stars l2 anima" src="../../assets/images/xing.png" alt="" />
+    <img class="stars l3 anima" src="../../assets/images/xing.png" alt="" />
+    <img class="stars l4 anima" src="../../assets/images/xing.png" alt="" />
+    <img class="stars l5 anima" src="../../assets/images/xing.png" alt="" />
+    <img class="stars l6 anima" src="../../assets/images/xing.png" alt="" />
   </div>
 </template>
 
