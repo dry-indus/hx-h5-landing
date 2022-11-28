@@ -3,7 +3,7 @@
     <div class="header">
       <div class="logoWarrper">
         <img class="logo" src="../../assets/images/logo.png" alt="" />
-        <img v-for="(item,index) in state.logoList" :key="index" :class="['stars', 'l' + (index + 1), 'anima']" :src="item" alt="" />
+        <img v-for="(item, index) in state.logoList" :key="index" :style="{animationDelay: item.delay,left: item.left, right: item.right, bottom: item.bottom}" :class="['stars', 'l' + (index + 1), 'anima']" :src="item" alt="" />
       </div>
       <p class="appName">海选新鲜</p>
     </div>
@@ -13,7 +13,7 @@
         <div class="item" v-for="(item, index) in state.storeList" :key="index">
           <div class="info">
             <img :src="item.prtrait" alt="" />
-            <span class="storeTitle">{{ item.storeName }}</span>
+            <span @click="toPage(item.URL)" class="storeTitle">{{ item.storeName }}</span>
           </div>
           <div class="data">
             <nut-icon name="star" />
@@ -28,17 +28,21 @@
 <script lang="ts" setup name="StorePage">
 import { reactive } from 'vue';
 import { storeSearch } from '/@/api/landing';
-import xing from '../../assets/images/xing.png'
-import shell from '../../assets/images/shell.png'
+import xing from '../../assets/images/xing.png';
+import shell from '../../assets/images/shell.png';
 const formData = reactive({
   search: '',
 });
 const state = reactive<any>({
   storeList: [],
   logoList: [],
+  randomList: []
 });
 const handleChange = () => {
   search(formData.search);
+};
+const toPage = (url) => {
+  window.open(url, '_blank')
 };
 const getRandomNode = (arr, count) => {
   var shuffled = arr.slice(0),
@@ -52,20 +56,25 @@ const getRandomNode = (arr, count) => {
     shuffled[index] = shuffled[i];
     shuffled[i] = temp;
   }
-  return shuffled.slice(min).map(m=> m.prtrait);
-}
+  return shuffled.slice(min).map((m) => m.prtrait);
+};
 const randomOrder = (arr) => {
   var length = arr.length,
     randomIndex,
     temp;
   while (length) {
-    randomIndex = Math.floor(Math.random() * (length--));
+    randomIndex = Math.floor(Math.random() * length--);
     temp = arr[randomIndex];
     arr[randomIndex] = arr[length];
-    arr[length] = temp
+    arr[length] = temp;
   }
   return arr;
-}
+};
+const getRandomNum = (Min, Max) => {
+  var Range = Max - Min;
+  var Rand = Math.random();
+  return Min + Math.round(Rand * Range);
+};
 const search = (keywords) => {
   const params = {
     keywords,
@@ -76,20 +85,51 @@ const search = (keywords) => {
   storeSearch(params).then((res) => {
     if (res?.status === 200) {
       const result = res.data.data.result;
-      state.storeList = result
-      const list = JSON.parse(JSON.stringify(getRandomNode(result, 5)))
-      const starArr = [xing,xing,xing]
-      const shellArr = [shell,shell,shell]
-      const all = [...list,...starArr,...shellArr]
-      state.logoList = randomOrder(all)
-      console.log(JSON.parse(JSON.stringify(list)),all)
+      state.storeList = result;
+      const list = JSON.parse(JSON.stringify(getRandomNode(result, 5)));
+      const starArr = [xing, xing, xing];
+      const shellArr = [shell, shell, shell];
+      const all = [...list, ...starArr, ...shellArr];
+      state.randomList = [...randomOrder(all)] ;
+      state.logoList =  state.randomList
+      // .map((m,n)=>{
+      //   return  n < 6 ?
+      //   {
+      //     imgSrc:  state.randomList[n],
+      //     bottom: getRandomNum(-100,200) + 'px',
+      //     left: getRandomNum(-100,200) + 'px',
+      //     delay: getRandomNum(1,6) + 's'
+      //   } : 
+      //   {
+      //     imgSrc:  state.randomList[n],
+      //     right: getRandomNum(-100,200) + 'px',
+      //     top: getRandomNum(-100,200) + 'px',
+      //     delay: getRandomNum(1,6) + 's'
+      //   }
+      // })
+      // randomPosition()
     }
   });
 };
+const randomPosition = () => {
+  // setInterval(()=>{
+  //   state.logoList.forEach((m,n)=>{
+  //         if(n < getRandomNum(1,20))
+  //         m.delay =  getRandomNum(1,20) + 's' 
+  //     })
+  //     console.log(JSON.parse(JSON.stringify(state.logoList)))
+  // },6000)
+}
+randomPosition()
 search('string');
 </script>
 
 <style lang="scss" scoped>
+@function randomNum($min, $max) {
+  $rand: random();
+  $randomNum: $min + floor($rand * (($max - $min) + 1));
+  @return $randomNum;
+}
 .logoWarrper {
   width: 100%;
   height: 300px;
@@ -149,41 +189,41 @@ search('string');
   bottom: -10px;
   animation-delay: 6s;
 }
-.l7{
+.l7 {
   position: absolute;
-    left: 41px;
-    top: -75px;
-    animation-delay: 7s;
+  left: 41px;
+  top: -75px;
+  animation-delay: 7s;
 }
-.l8{
+.l8 {
   position: absolute;
-    left: 200px;
-    top: -75px;
-    animation-delay:8s;
+  left: 200px;
+  top: -75px;
+  animation-delay: 8s;
 }
-.l9{
+.l9 {
   position: absolute;
-    left: 400px;
-    top: -75px;
-    animation-delay: 9s;
+  left: 400px;
+  top: -75px;
+  animation-delay: 9s;
 }
-.l10{
+.l10 {
   position: absolute;
-    left: 600px;
-    top: -75px;
-    animation-delay: 10s;
+  left: 600px;
+  top: -75px;
+  animation-delay: 10s;
 }
-.l11{
+.l11 {
   position: absolute;
-    left: 100px;
-    bottom: -60px;
-    animation-delay: 11s;
+  left: 100px;
+  bottom: -60px;
+  animation-delay: 11s;
 }
-.l12{
+.l12 {
   position: absolute;
-    right: 100px;
-    bottom: -60px;
-    animation-delay: 12s;
+  right: 100px;
+  bottom: -60px;
+  animation-delay: 12s;
 }
 @keyframes move {
   0% {
@@ -194,6 +234,7 @@ search('string');
     transform: translateZ(120px);
   }
 }
+
 .anima {
   animation-name: move;
   animation-timing-function: linear;

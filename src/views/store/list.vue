@@ -34,7 +34,7 @@ const state = reactive<any>({
   info: [],
 });
 const toPage = (url) => {
-  window.location.href = url;
+  window.open(url, '_blank')
 };
 const setting = () => {
   storeSetting().then((res) => {
