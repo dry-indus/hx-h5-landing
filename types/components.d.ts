@@ -7,7 +7,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    LandingLogo: typeof import('./../src/components/logo/index.vue')['default']
     Language: typeof import('./../src/components/language/index.vue')['default']
     Logo: typeof import('./../src/components/logo/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
