@@ -26,141 +26,142 @@
 </template>
 
 <script lang="ts" setup name="ListPage">
-// import LandingLogo from '/@/views/store/logo/index.vue';
-import { reactive } from 'vue';
+  // import LandingLogo from '/@/views/store/logo/index.vue';
+  import { reactive } from 'vue';
 
-import { storeSetting } from '/@/api/landing';
-const state = reactive<any>({
-  info: [],
-});
-const toPage = (url) => {
-  window.open(url, '_blank')
-};
-const setting = () => {
-  storeSetting().then((res) => {
-    if (res?.status === 200) {
-      state.info = res.data.data.entry;
-      console.log(state.info, res.data);
-    }
+  import { storeSetting } from '/@/api/landing';
+  const state = reactive<any>({
+    info: [],
   });
-};
-setting();
+  const toPage = (url) => {
+    window.open(url, '_blank');
+  };
+  const setting = () => {
+    storeSetting().then((res) => {
+      if (res?.status === 200) {
+        state.info = res.data.data.entry;
+        console.log(state.info, res.data);
+      }
+    });
+  };
+  setting();
 </script>
 
 <style lang="scss" scoped>
-.logoWarrper{
-  width: 100%;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform-style: preserve-3d;
-  perspective-origin: center;
-  perspective: 80px;
-}
-.logo {
-  width: 218px;
-  height: 233px;
-  img {
+  .logoWarrper {
     width: 100%;
-    height: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    perspective-origin: center;
+    perspective: 80px;
   }
-}
-.stars {
-  width: 70px;
-  height: 70px;
-  animation: anima;
-  opacity: 0;
-}
-.l1 {
-  position: absolute;
-  right: -19px;
-  animation-delay: 1s;
-}
-.l2 {
-  position: absolute;
-  right: -31px;
-  top: -10px;
-  animation-delay: 2s;
-}
-.l3 {
-  position: absolute;
-  right: -31px;
-  bottom: -10px;
-  animation-delay: 3s;
-}
-.l4 {
-  position: absolute;
-  left: -19px;
-  animation-delay: 4s;
-}
-.l5 {
-  position: absolute;
-  left: -31px;
-  top: -10px;
-  animation-delay: 5s;
-}
-.l6{
-  position: absolute;
-  left: -31px;
-  bottom: -10px;
-  animation-delay: 6s;
-}
-@keyframes move {
-  0% {
-    transform: translateZ(-120px);
-    opacity: 1;
+  .logo {
+    width: 218px;
+    height: 233px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
-  100% {
-    transform: translateZ(60px);
+  .stars {
+    width: 70px;
+    height: 70px;
+    animation: anima;
+    opacity: 0;
   }
-}
-.anima {
-  animation-name: move;
-  animation-timing-function: linear;
-  /* animation-delay: 2s; */
-  animation-iteration-count: infinite;
-  animation-duration: 4s;
-}
-.storeWarpper {
-  height: 100vh;
-  width: 100vw;
-  background: #000;
-}
-.header {
-  height: 40%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  .appName {
-    font-size: 36px;
+  .l1 {
+    position: absolute;
+    right: -19px;
+    animation-delay: 1s;
+  }
+  .l2 {
+    position: absolute;
+    right: -31px;
+    top: -10px;
+    animation-delay: 2s;
+  }
+  .l3 {
+    position: absolute;
+    right: -31px;
+    bottom: -10px;
+    animation-delay: 3s;
+  }
+  .l4 {
+    position: absolute;
+    left: -19px;
+    animation-delay: 4s;
+  }
+  .l5 {
+    position: absolute;
+    left: -31px;
+    top: -10px;
+    animation-delay: 5s;
+  }
+  .l6 {
+    position: absolute;
+    left: -31px;
+    bottom: -10px;
+    animation-delay: 6s;
+  }
+  @keyframes move {
+    0% {
+      transform: translateZ(-120px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateZ(60px);
+    }
+  }
+  .anima {
+    animation-name: move;
+    animation-timing-function: linear;
+    /* animation-delay: 2s; */
+    animation-iteration-count: infinite;
+    animation-duration: 4s;
+  }
+  .storeWarpper {
+    height: 100vh;
+    width: 100vw;
+    background: #000;
+    overflow: hidden;
+  }
+  .header {
+    height: 40%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .appName {
+      font-size: 36px;
+      color: #ffffff;
+    }
+  }
+  .store {
+    position: fixed;
+    width: 333px;
+    height: 92.34px;
+    right: 0;
+    bottom: 500px;
+    background: #da2d96;
     color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
   }
-}
-.store {
-  position: fixed;
-  width: 333px;
-  height: 92.34px;
-  right: 0;
-  bottom: 500px;
-  background: #da2d96;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
-.rider {
-  position: fixed;
-  width: 333px;
-  height: 92.34px;
-  right: 0;
-  bottom: 300px;
-  background: #7792cf;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-}
+  .rider {
+    position: fixed;
+    width: 333px;
+    height: 92.34px;
+    right: 0;
+    bottom: 300px;
+    background: #7792cf;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
 </style>

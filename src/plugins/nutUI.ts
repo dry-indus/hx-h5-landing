@@ -38,9 +38,13 @@ import {
   InputNumber,
   Uploader,
   Progress,
+  Swiper,
+  SwiperItem,
 } from '@nutui/nutui';
 
 export const nutUiComponents = [
+  Swiper,
+  SwiperItem,
   Button,
   Cell,
   CellGroup,

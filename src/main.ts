@@ -12,8 +12,13 @@ import '@nutui/nutui/dist/style.css';
 import 'animate.css/animate.min.css';
 import { Request } from '/@/utils/request';
 import VueAxios from 'vue-axios';
+import VueTouch from 'vue-touch';
 
 const app = createApp(App);
+app.use(VueTouch, { name: 'v-touch' });
+VueTouch.config.swipe = {
+  threshold: 50, //设置左右滑动的距离
+};
 
 // 路由
 app.use(router);
