@@ -28,6 +28,7 @@
           </div>
         </div>
       </div>
+      <img class="down" @click="downPage" src="../../assets/images/down.png" alt="" />
     </main>
   </div>
 </template>
@@ -37,6 +38,11 @@
   import { storeSearch } from '/@/api/landing';
   import xing from '../../assets/images/xing.png';
   import shell from '../../assets/images/shell.png';
+  defineProps({
+    pageName: String,
+  });
+  const emit = defineEmits(['update:pageName']);
+
   const formData = reactive({
     search: '',
   });
@@ -45,6 +51,9 @@
     logoList: [],
     randomList: [],
   });
+  const downPage = () => {
+    emit('update:pageName', 'choice');
+  };
   const handleChange = () => {
     search(formData.search);
   };
@@ -136,6 +145,10 @@
     $rand: random();
     $randomNum: $min + floor($rand * (($max - $min) + 1));
     @return $randomNum;
+  }
+  .down {
+    width: 60px;
+    height: 22px;
   }
   .logoWarrper {
     width: 100%;
